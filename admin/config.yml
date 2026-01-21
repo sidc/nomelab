@@ -5,8 +5,8 @@ backend:
   base_url: https://api.netlify.com
   auth_endpoint: auth
 
-media_folder: "images"
-public_folder: "/images"
+media_folder: "pdfs"
+public_folder: "/pdfs"
 
 collections:
   - name: "team"
@@ -35,6 +35,7 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Venue", name: "venue", widget: "string"}
       - {label: "Link", name: "link", widget: "string", required: false}
+      - {label: "PDF Poster", name: "pdf", widget: "file", required: false, media_folder: "/pdfs"}
       
   - name: "gallery"
     label: "Gallery Photos"
@@ -62,3 +63,4 @@ collections:
       - {label: "YouTube Video ID", name: "youtube_id", widget: "string"}
       - {label: "Episode Number", name: "episode", widget: "string"}
       - {label: "Duration", name: "duration", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
