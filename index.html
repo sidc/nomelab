@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meditation Neuroscience Research Group | Michigan State University</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #18453B 0%, #2d6a5f 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        header p {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+        
+        .university {
+            margin-top: 20px;
+            font-size: 1.1em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        section {
+            background: white;
+            margin: 40px 0;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #18453B;
+            font-size: 2em;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #18453B;
+        }
+        
+        h3 {
+            color: #2d6a5f;
+            font-size: 1.5em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        .research-areas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .research-card {
+            padding: 25px;
+            background: #f8f9fa;
+            border-left: 4px solid #18453B;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .research-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .research-card h4 {
+            color: #18453B;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        .opportunities {
+            background: linear-gradient(135deg, #fff5e6 0%, #ffe4cc 100%);
+            border-left: 5px solid #ff9933;
+            padding: 40px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .opportunity-box {
+            background: white;
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .opportunity-box h3 {
+            color: #ff6600;
+            margin-top: 0;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .team-member {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .team-member h4 {
+            color: #18453B;
+            margin: 10px 0 5px;
+            font-size: 1.2em;
+        }
+        
+        .team-member .role {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        
+        .publications {
+            list-style: none;
+        }
+        
+        .publications li {
+            padding: 15px;
+            margin: 15px 0;
+            background: #f8f9fa;
+            border-left: 3px solid #18453B;
+            border-radius: 3px;
+        }
+        
+        .publications li strong {
+            color: #18453B;
+        }
+        
+        /* Gallery Styles */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .gallery-caption {
+            padding: 15px;
+            background: white;
+        }
+        
+        .gallery-caption h4 {
+            color: #18453B;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+        }
+        
+        .gallery-caption p {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .gallery-placeholder {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 3em;
+        }
+        
+        /* Lightbox Modal */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .lightbox.active {
+            display: flex;
+        }
+        
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .lightbox-close:hover {
+            color: #ff6600;
+        }
+        
+        /* Video/Podcast Styles */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .video-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            background: #000;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .video-info {
+            padding: 20px;
+        }
+        
+        .video-info h4 {
+            color: #18453B;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        .video-info p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .video-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9em;
+            color: #999;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        
+        .podcast-placeholder {
+            background: linear-gradient(135deg, #18453B 0%, #2d6a5f 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 300px;
+        }
+        
+        .podcast-placeholder i {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+        
+        .podcast-placeholder h4 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #18453B;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+            transition: background 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #2d6a5f;
+        }
+        
+        .btn-secondary {
+            background: #ff6600;
+        }
+        
+        .btn-secondary:hover {
+            background: #ff8533;
+        }
+        
+        footer {
+            background: #18453B;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+        
+        .contact-info {
+            margin-top: 20px;
+        }
+        
+        .contact-info a {
+            color: #fff;
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            
+            section {
+                padding: 30px 20px;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+            
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Meditation Neuroscience Research Group</h1>
+            <p>Exploring Neural Mechanisms of Contemplative Practices</p>
+            <div class="university">Michigan State University</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="about">
+            <h2>About Our Research</h2>
+            <p>Our interdisciplinary research group combines computational neuroscience, psychology, and biomedical engineering to understand the neural mechanisms underlying meditation practices. Using advanced EEG analysis and machine learning techniques, we investigate how different meditation techniques—particularly mantra-based practices—affect brain oscillations, cognitive performance, and mental well-being.</p>
+            <p style="margin-top: 20px;">We maintain an in-house EEGlab facility equipped with state-of-the-art 64-channel wireless EEG systems, enabling longitudinal studies that track neural changes over weeks of meditation practice.</p>
+        </section>
+
+        <div class="opportunities">
+            <h2 style="color: #ff6600; border-color: #ff6600;">🎓 Join Our Team</h2>
+            
+            <div class="opportunity-box">
+                <h3>PhD Student Positions Available</h3>
+                <p><strong>We are actively seeking motivated PhD students</strong> to join our research group. Ideal candidates will have:</p>
+                <ul style="margin: 15px 0 15px 30px;">
+                    <li>Background in neuroscience, computational science, biomedical engineering, or related fields</li>
+                    <li>Interest in meditation research and contemplative neuroscience</li>
+                    <li>Experience with signal processing, machine learning, or EEG analysis (preferred but not required)</li>
+                    <li>Strong programming skills (Python, MATLAB)</li>
+                </ul>
+                <p><strong>What we offer:</strong> Opportunities to work on cutting-edge longitudinal meditation studies, collaborate with clinical partners, publish in top-tier journals, and contribute to a growing field of contemplative neuroscience.</p>
+                <a href="mailto:angqi@msu.edu" class="btn btn-secondary">Apply for PhD Position</a>
+            </div>
+
+            <div class="opportunity-box">
+                <h3>Summer Research Internships</h3>
+                <p><strong>Undergraduate and Master's students</strong> are invited to apply for summer research internships. This is an excellent opportunity to:</p>
+                <ul style="margin: 15px 0 15px 30px;">
+                    <li>Gain hands-on experience with EEG data collection and analysis</li>
+                    <li>Learn advanced signal processing and machine learning techniques</li>
+                    <li>Contribute to ongoing meditation neuroscience studies</li>
+                    <li>Co-author research publications and conference presentations</li>
+                </ul>
+                <p><strong>Duration:</strong> 8-12 weeks during summer<br>
+                <strong>Eligibility:</strong> Current undergraduate or Master's students in relevant fields</p>
+                <a href="mailto:angqi@msu.edu" class="btn btn-secondary">Apply for Summer Internship</a>
+            </div>
+        </div>
+
+        <section id="research">
+            <h2>Research Areas</h2>
+            <div class="research-areas">
+                <div class="research-card">
+                    <h4>Neural Mechanisms of Meditation</h4>
+                    <p>Investigating the brain dynamics underlying Japa meditation techniques, including mantra-based practices (Hare Krishna, Sa Ta Na Ma) and breath-focused meditation. Using advanced spectral analysis and FOOOF decomposition to identify neural biomarkers of meditation states.</p>
+                </div>
+                
+                <div class="research-card">
+                    <h4>Cognitive & Behavioral Changes</h4>
+                    <p>Examining longitudinal improvements in attention, cognitive processing speed (P300 latency), mindfulness, interoceptive awareness, and stress reduction through controlled meditation interventions lasting 6+ weeks.</p>
+                </div>
+                
+                <div class="research-card">
+                    <h4>Clinical Collaboration</h4>
+                    <p>Partnering with Henry Ford Hospital to develop advanced EEG-based methods for detecting and localizing epileptic activity in brain regions, applying our signal processing expertise to clinical challenges.</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 50px;">Key Findings</h3>
+            <ul style="margin-left: 30px; margin-top: 20px;">
+                <li>Mantra-based meditation produces distinct alpha band modulations compared to breath-focused techniques</li>
+                <li>Six weeks of daily practice significantly reduces P300 latency, indicating improved neural processing efficiency</li>
+                <li>Meditation enhances interoceptive awareness (MAIA scores) across all technique types</li>
+                <li>Individual Alpha Frequency (IAF) increases and Individual Alpha Power (IAP) decreases during meditation, suggesting enhanced attentional control</li>
+                <li>Deep learning models with Stationary Wavelet Transform modules successfully classify meditation states with >90% accuracy</li>
+            </ul>
+        </section>
+
+        <section id="gallery">
+            <h2>📸 Gallery: Talks & Presentations</h2>
+            <p>Highlights from our conference presentations, research talks, and community outreach events.</p>
+            
+            <div class="gallery-grid">
+                <!-- Photo 1 - Replace with your actual images -->
+                <div class="gallery-item" onclick="openLightbox('images/photo1.jpg')">
+                    <div class="gallery-placeholder">📷</div>
+                    <div class="gallery-caption">
+                        <h4>Conference Presentation</h4>
+                        <p>Presenting findings at MSU Research Conference 2024</p>
+                    </div>
+                </div>
+                
+                <!-- Photo 2 -->
+                <div class="gallery-item" onclick="openLightbox('images/photo2.jpg')">
+                    <div class="gallery-placeholder">📷</div>
+                    <div class="gallery-caption">
+                        <h4>EEG Lab Session</h4>
+                        <p>Team conducting meditation EEG data collection</p>
+                    </div>
+                </div>
+                
+                <!-- Photo 3 -->
+                <div class="gallery-item" onclick="openLightbox('images/photo3.jpg')">
+                    <div class="gallery-placeholder">📷</div>
+                    <div class="gallery-caption">
+                        <h4>Poster Session</h4>
+                        <p>International Neuroscience Conference</p>
+                    </div>
+                </div>
+                
+                <!-- Photo 4 -->
+                <div class="gallery-item" onclick="openLightbox('images/photo4.jpg')">
+                    <div class="gallery-placeholder">📷</div>
+                    <div class="gallery-caption">
+                        <h4>Community Workshop</h4>
+                        <p>Teaching meditation techniques to research participants</p>
+                    </div>
+                </div>
+                
+                <!-- Photo 5 -->
+                <div class="gallery-item" onclick="openLightbox('images/photo5.jpg')">
+                    <div class="gallery-placeholder">📷</div>
+                    <div class="gallery-caption">
+                        <h4>Team Meeting</h4>
+                        <p>Collaboration with Harmony Collective experts</p>
+                    </div>
+                </div>
+                
+                <!-- Photo 6 -->
+                <div class="gallery-item" onclick="openLightbox('images/photo6.jpg')">
+                    <div class="gallery-placeholder">📷</div>
+                    <div class="gallery-caption">
+                        <h4>Lab Equipment</h4>
+                        <p>64-channel EEG system in action</p>
+                    </div>
+                </div>
+            </div>
+            
+            <p style="margin-top: 30px; text-align: center; color: #666;">
+                <em>Want to share photos from our events? Contact us at <a href="mailto:angqi@msu.edu">angqi@msu.edu</a></em>
+            </p>
+        </section>
+
+        <section id="podcast">
+            <h2>🎙️ Podcast & Videos</h2>
+            <p>Watch our research talks, podcast episodes, and educational content about meditation neuroscience.</p>
+            
+            <div class="video-grid">
+                <!-- Video 1 - Example with YouTube embed -->
+                <div class="video-card">
+                    <div class="video-container">
+                        <!-- Replace VIDEO_ID with your YouTube video ID -->
+                        <iframe 
+                            src="https://www.youtube.com/embed/VIDEO_ID" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <h4>Introduction to Meditation Neuroscience</h4>
+                        <p>Dr. Ravishankar discusses the neural mechanisms behind different meditation techniques and our research approach.</p>
+                        <div class="video-meta">
+                            <span>Episode 1</span>
+                            <span>Duration: 25:30</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Video 2 -->
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe 
+                            src="https://www.youtube.com/embed/VIDEO_ID" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <h4>EEG Analysis of Mantra Meditation</h4>
+                        <p>Angqi Li presents findings on how mantra-based meditation affects brain oscillations over time.</p>
+                        <div class="video-meta">
+                            <span>Episode 2</span>
+                            <span>Duration: 18:45</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Video 3 -->
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe 
+                            src="https://www.youtube.com/embed/VIDEO_ID" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <h4>Live Q&A: Starting Your Meditation Practice</h4>
+                        <p>Expert meditators Devin O'Rourke and Sidharth Chhabra answer common questions about beginning meditation.</p>
+                        <div class="video-meta">
+                            <span>Episode 3</span>
+                            <span>Duration: 32:10</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Placeholder for future content -->
+                <div class="video-card">
+                    <div class="podcast-placeholder">
+                        <div>🎬</div>
+                        <h4>More Content Coming Soon!</h4>
+                        <p style="margin-top: 10px;">Subscribe to our channel for updates</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="https://youtube.com/@yourchannel" class="btn" target="_blank">Subscribe to Our YouTube Channel</a>
+                <a href="https://spotify.com/yourpodcast" class="btn" target="_blank" style="margin-left: 10px;">Listen on Spotify</a>
+            </div>
+        </section>
+
+        <section id="team">
+            <h2>Research Team</h2>
+            
+            <h3>Lead Researchers</h3>
+            <div class="team-grid">
+                <div class="team-member">
+                    <h4>Angqi Li</h4>
+                    <div class="role">PhD Candidate, Lead Researcher</div>
+                    <p>Computational Mathematics, Science & Engineering</p>
+                </div>
+                
+                <div class="team-member">
+                    <h4>Dr. Saiprasad Ravishankar</h4>
+                    <div class="role">Principal Investigator</div>
+                    <p>Computational Mathematics, Science & Engineering<br>Biomedical Engineering</p>
+                </div>
+            </div>
+
+            <h3>Advisory Faculty</h3>
+            <div class="team-grid">
+                <div class="team-member">
+                    <h4>Dr. Barry H. Cohen</h4>
+                    <div class="role">Advisor</div>
+                    <p>Applied Psychology<br>New York University</p>
+                </div>
+                
+                <div class="team-member">
+                    <h4>Dr. Mengsen Zhang</h4>
+                    <div class="role">Advisor</div>
+                    <p>Computational Mathematics, Science & Engineering</p>
+                </div>
+                
+                <div class="team-member">
+                    <h4>Dr. Taosheng Liu</h4>
+                    <div class="role">Advisor</div>
+                    <p>Psychology<br>Michigan State University</p>
+                </div>
+            </div>
+
+            <h3>Research Support & Students</h3>
+            <div class="team-grid">
+                <div class="team-member">
+                    <h4>Sidharth Chhabra</h4>
+                    <div class="role">Research Support & Expert Meditator</div>
+                    <p>Harmony Collective, Ypsilanti</p>
+                </div>
+                
+                <div class="team-member">
+                    <h4>Syed Ab Basit Rafi</h4>
+                    <div class="role">Graduate Student</div>
+                </div>
+            </div>
+
+            <p style="margin-top: 30px;"><em>We also gratefully acknowledge our expert meditation instructors Devin O'Rourke (Harmony Collective) and our dedicated data collectors including Pratham Pradhan, Annie Wozniak, Vu Song Thuy Nguyen, Wei-ting Tan, Alisia Coipel, and Genevieve Orlewicz.</em></p>
+        </section>
+
+        <section id="publications">
+            <h2>Selected Publications</h2>
+            <ul class="publications">
+                <li>
+                    <strong>Li, A.</strong>, Syed, A.B.R., Nguyen, V.S.T., Zhang, M., Cohen, B.H., & Ravishankar, S. (2025). "Meditation-journey: Dataset and Benchmarks for Longitudinal Study of Different Meditation Techniques." <em>Michigan State University Research Conference.</em>
+                </li>
+                <li>
+                    <strong>Li, A.</strong>, Zhang, M., Liu, T., Cohen, B.H., Rodriguez-Larios, J., & Ravishankar, S. (2024). "Analysis of Longitudinal Variations in Brain Oscillations for Breath-Focus and Mantra-Based Meditation." <em>Neuroscience Conference Proceedings.</em>
+                </li>
+                <li>
+                    <strong>Li, A.</strong>, Pradhan, P., Wozniak, A., Nguyen, V.S.T., Ika, K., Zhang, M., Cohen, B.H., & Ravishankar, S. (2024). "Understanding Longitudinal Effects of Mantra Meditation and Breath-focused Meditation using EEG." <em>Conference on Contemplative Studies.</em>
+                </li>
+                <li>
+                    <strong>Li, A.</strong>, Syed, A.B., Ika, K., Liu, T., Zhang, M., Cohen, B.H., & Ravishankar, S. (2024). "Quantifying Improvements in Cognitive Skills, Stress, and Mindfulness from Mantra-based and Breath-focus Meditation Techniques." <em>International Conference on Meditation and Mental Health.</em>
+                </li>
+            </ul>
+            <p style="margin-top: 30px;"><em>Additional research supported by Brainwave Science, Inc. and collaborations with Brunel University London.</em></p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <p><strong>For PhD positions, internships, or collaboration inquiries:</strong></p>
+                <p>Email: <a href="mailto:angqi@msu.edu">angqi@msu.edu</a></p>
+                <p>Department of Computational Mathematics, Science and Engineering<br>
+                Michigan State University<br>
+                East Lansing, MI 48824</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Meditation Neuroscience Research Group | Michigan State University</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">Advancing the science of contemplative practices through rigorous neuroscience research</p>
+        </div>
+    </footer>
+
+    <script>
+        // Lightbox functionality
+        function openLightbox(imageSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightbox.classList.add('active');
+            lightboxImg.src = imageSrc;
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+        }
+
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>
