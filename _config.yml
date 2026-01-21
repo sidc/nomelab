@@ -1,0 +1,41 @@
+# Site settings
+title: Meditation Research -SLIM
+email: chhabr56@msu.edu
+description: Exploring Neural Mechanisms of Contemplative Practices
+baseurl: "/mantralab"
+url: "https://sidc.github.io"
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# Collections for CMS content
+collections:
+  team:
+    output: false
+  publications:
+    output: false
+  gallery:
+    output: false
+  videos:
+    output: false
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+# Exclude from build
+exclude:
+  - README.md
+  - create-content.ps1
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# Include admin for CMS
+include:
+  - _admin

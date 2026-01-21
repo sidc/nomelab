@@ -5,13 +5,13 @@ backend:
   base_url: https://api.netlify.com
   auth_endpoint: auth
 
-media_folder: "pdfs"
-public_folder: "/pdfs"
+media_folder: "images"
+public_folder: "/images"
 
 collections:
   - name: "team"
     label: "Team Members"
-    folder: "content/team"
+    folder: "_team"
     create: true
     slug: "{{slug}}"
     extension: "md"
@@ -24,7 +24,7 @@ collections:
       
   - name: "publications"
     label: "Publications"
-    folder: "content/publications"
+    folder: "_publications"
     create: true
     slug: "{{year}}-{{slug}}"
     extension: "md"
@@ -35,11 +35,11 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Venue", name: "venue", widget: "string"}
       - {label: "Link", name: "link", widget: "string", required: false}
-      - {label: "PDF Poster", name: "pdf", widget: "file", required: false, media_folder: "/pdfs"}
+      - {label: "PDF Poster", name: "pdf", widget: "file", required: false}
       
   - name: "gallery"
     label: "Gallery Photos"
-    folder: "content/gallery"
+    folder: "_gallery"
     create: true
     slug: "{{slug}}"
     extension: "md"
@@ -52,7 +52,7 @@ collections:
       
   - name: "videos"
     label: "Videos & Podcasts"
-    folder: "content/videos"
+    folder: "_videos"
     create: true
     slug: "{{slug}}"
     extension: "md"
