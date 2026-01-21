@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: sidc/mantralab
   branch: main
 
 media_folder: "images"
@@ -11,6 +12,7 @@ collections:
     folder: "content/team"
     create: true
     slug: "{{slug}}"
+    extension: "md"
     fields:
       - {label: "Name", name: "name", widget: "string"}
       - {label: "Role", name: "role", widget: "string"}
@@ -22,6 +24,7 @@ collections:
     folder: "content/publications"
     create: true
     slug: "{{year}}-{{slug}}"
+    extension: "md"
     fields:
       - {label: "Authors", name: "authors", widget: "string"}
       - {label: "Year", name: "year", widget: "string"}
@@ -34,6 +37,7 @@ collections:
     folder: "content/gallery"
     create: true
     slug: "{{slug}}"
+    extension: "md"
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Description", name: "description", widget: "text"}
@@ -45,6 +49,7 @@ collections:
     folder: "content/videos"
     create: true
     slug: "{{slug}}"
+    extension: "md"
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Description", name: "description", widget: "text"}
@@ -52,16 +57,3 @@ collections:
       - {label: "Episode Number", name: "episode", widget: "string"}
       - {label: "Duration", name: "duration", widget: "string"}
       - {label: "Date", name: "date", widget: "datetime"}
-      
-  - name: "settings"
-    label: "Site Settings"
-    files:
-      - label: "General Settings"
-        name: "general"
-        file: "content/settings.json"
-        fields:
-          - {label: "Site Title", name: "site_title", widget: "string"}
-          - {label: "Contact Email", name: "contact_email", widget: "string"}
-          - {label: "YouTube Channel URL", name: "youtube_url", widget: "string", required: false}
-          - {label: "Spotify Podcast URL", name: "spotify_url", widget: "string", required: false}
-          - {label: "About Text", name: "about_text", widget: "markdown"}
