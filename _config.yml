@@ -6,7 +6,45 @@ baseurl: "/mantralab"
 url: "https://sidc.github.io"
 
 # Build settings
+markdown: kramdown# Site settings
+title: NOME Lab
+email: ravisha3@msu.edu
+description: Neuroscience of Meditation Lab at Michigan State University
+baseurl: "/mantralab"
+url: "https://sidc.github.io"
+
+# Build settings
 markdown: kramdown
+permalink: pretty
+
+# Collections for CMS content
+collections:
+  team:
+    output: false
+  publications:
+    output: false
+  gallery:
+    output: false
+  videos:
+    output: false
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+# Exclude from build
+exclude:
+  - README.md
+  - "*.ps1"
+  - "*.old"
+  - "*.backup"
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
 permalink: pretty
 plugins:
   - jekyll-feed

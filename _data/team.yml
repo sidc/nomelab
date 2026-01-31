@@ -1,39 +1,41 @@
-﻿- name: Angqi Li
-  role: PhD Candidate
-  department: Computational Mathematics, Science & Engineering
-  category: Lead Researcher
-
+﻿# Lab Members
 - name: Dr. Saiprasad Ravishankar
-  role: Principal Investigator
-  department: Computational Mathematics, Science & Engineering and Biomedical Engineering
-  category: Lead Researcher
+  role: Principal Investigator & Lab Director
+  department: Computational Mathematics, Science & Engineering and Biomedical Engineering, Michigan State University
+  category: Lab Member
 
-- name: Dr. Barry H. Cohen
-  role: Advisor
-  department: Applied Psychology, New York University
-  category: Advisory Faculty
+- name: Angqi Li
+  role: PhD Candidate
+  department: Computational Mathematics, Science & Engineering, Michigan State University
+  category: Lab Member
 
-- name: Dr. Mengsen Zhang
-  role: Advisor
-  department: Computational Mathematics, Science & Engineering
-  category: Advisory Faculty
-
-- name: Dr. Taosheng Liu
-  role: Advisor
-  department: Psychology, Michigan State University
-  category: Advisory Faculty
-
-- name: Dr. Matthew Sacchet
-  role: Advisor
-  department: Meditation Research Program, Harvard Medical School
-  category: Advisory Faculty
+- name: Syed Ab Basit Rafi
+  role: Graduate Student
+  department: Computational Mathematics, Science & Engineering, Michigan State University
+  category: Lab Member
 
 - name: Sidharth Chhabra
   role: Research Support & Expert Meditator
   department: Harmony Collective, Ypsilanti
-  category: Research Support
+  category: Lab Member
 
-- name: Syed Ab Basit Rafi
-  role: Graduate Student
-  department: Computational Mathematics, Science & Engineering
-  category: Research Support
+# Advisors
+- name: Dr. Barry H. Cohen
+  role: Advisor
+  department: Applied Psychology, New York University
+  category: Advisor
+
+- name: Dr. Mengsen Zhang
+  role: Advisor
+  department: Computational Mathematics, Science & Engineering, Michigan State University
+  category: Advisor
+
+- name: Dr. Taosheng Liu
+  role: Advisor
+  department: Psychology, Michigan State University
+  category: Advisor
+
+- name: Dr. Matthew Sacchet
+  role: Collaborator
+  department: Meditation Research Program, Harvard Medical School
+  category: Advisor
