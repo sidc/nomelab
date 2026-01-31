@@ -156,7 +156,7 @@ title: Home
         <h2>Contact Us</h2>
         <div class="contact-info">
             <p><strong>For PhD positions, internships, or collaboration inquiries:</strong></p>
-            <p>Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+            <p>Email: {{ site.email }}</p>
             <p><strong>Lab Director:</strong><br>
             Dr. Saiprasad Ravishankar<br>
             Department of Computational Mathematics, Science and Engineering<br>

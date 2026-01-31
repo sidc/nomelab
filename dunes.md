@@ -44,7 +44,7 @@ title: DUNES Webinar Series
         </div>
 
         <div style="margin-top: 50px; padding: 40px; background: linear-gradient(135deg, #18453B 0%, #2d6a5f 100%); color: white; border-radius: 8px; text-align: center;">
-            <h3 style="margin-bottom: 20px;">Want to Present at DUNES?</h3>
+            <h3 style="margin-bottom: 20px; color: white;">Want to Present at DUNES?</h3>
             <p style="margin-bottom: 25px;">We welcome proposals from researchers working on meditation, mindfulness, and contemplative practices.</p>
             <a href="mailto:{{ site.email }}" class="btn" style="background: white; color: #18453B;">Contact Us to Present</a>
         </div>
